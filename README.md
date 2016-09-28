@@ -1,7 +1,7 @@
 
 # [ZengBiYi](https://github.com/ZengBiYi)的学习日志
 
-##开始Github的探索之配置学习日志和上传本地代码-2016.09.27
+##开始Github的探索之配置学习日志和上传本地代码--2016.09.27
   由于本人学习的习惯是先理解后行动的，加上刚接触github不久，对配置学习日志的步骤不理解，现在完成后来回顾一下：
   首先贴出配置的步骤：
 
@@ -28,13 +28,30 @@
   4. clone刚才新建的repository 到本地，输入命令：git clone https://github.com/Flowerowl/stumansys.git
   5. 新建Text文件夹作为仓库根目录（文件夹名字随意命名）
   6. 将需要上传的代码文件加入到Text根目录
-  7. 在根目录下建立仓库，输入下面命令：先进入到Text根目录下，再输入git init（初始化一个仓库）
+  7. 在根目录下建立仓库，输入下面命令：先进入到根目录下，再输入git init（初始化一个仓库）
   8. 将所有文件添加到仓库，输入下面命令：git add .
   9. 提交，输入下面命令：git commit -m “CommitInfo”
   10. 添加源到GitHub：git remote add origin git@github.com:YourName/YourRepositroy.git
   11. 上传源到GitHub：git push -u origin master
   至此，就可以在自己的Github中看到新增的文件了。
 
+##Gitbook的成功创建以及如何在Github上更新Gitbook--2016.09.28
+  继昨天创建完Gitbook后，出现了些许小问题，一打开自己的Gitbook地址无法显示出内容，而是显示Your content is almost ready.
+  折腾了许久，原来只需要删除重建即可
+
+  在Github上更新Gitbook
+  1. 首先在自己的GIthub账户中找到与Gitbook相关联的那个repo,download zip，然后解压
+  接下来的步骤就是上传本地文件到github，但是和昨天写的步骤有一点点区别，因为昨天那个是新建了一个repo，而今天是直接更新已有的文件。所以重写步骤如下：
+  2. 将要更新的文件所在的文件夹即刚刚解压的文件夹作为根目录，在根目录下建立仓库：git init
+  3. 将所有文件添加到仓库，输入下面命令：git add .
+  4. 提交，输入下面命令：git commit -m “CommitInfo”
+  5. 添加源到GitHub：git remote add origin git@github.com:YourName/YourRepositroy.git(注意，origin 后面的这一串要修改，修改的内容怎么找呢：打开Github与Gitbook相关联的文件夹，点clone or download按钮，Clone with SSH,复制框中的那一串)
+  6. 上传源到GitHub：git push -u origin master
+  
+  我在上传过程中遇到一个问题，就是没有修改第5步的那一串，导致上传时找不到repo。
+  查看源的命令：git remote -v, 发现并不是我要上传的那个仓库，
+  删除当前这个origin：git remote rm origin
+  添加origin：和上面第5步一样。
 
 
 
